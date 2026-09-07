@@ -1,0 +1,37 @@
+{
+  "name": "functions",
+  "scripts": {
+    "lint": "eslint . --max-warnings=0",
+    "build": "tsc",
+    "test": "npm run build && node --test lib/schedule.test.js",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": ">=22 <25"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^14.3.0",
+    "firebase-functions": "^7.3.2"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.10.0",
+    "typescript-eslint": "^8.70.0",
+    "typescript": "^5.9.3"
+  },
+  "overrides": {
+    "gaxios": {
+      "uuid": "^11.1.1"
+    },
+    "teeny-request": {
+      "uuid": "^11.1.1"
+    }
+  },
+  "private": true
+}

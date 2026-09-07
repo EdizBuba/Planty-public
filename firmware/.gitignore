@@ -1,0 +1,9 @@
+secrets.h
+.env
+.env.*
+!.env.example
+*.pem
+*.p12
+*.pfx
+*service-account*.json
+*serviceAccount*.json
